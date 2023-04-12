@@ -1,0 +1,124 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <meta charset="UTF-8"></meta>
+            <meta http-equiv="X-UA-Compatible" content="IE=edge"></meta>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"></meta>
+        <link type="text/css" href="style.css" rel="stylesheet"/>
+    
+    <link rel="stylesheet" href="css/bootstrap.min.css"></link>
+    <link rel="stylesheet" href="css/bootstrap-theme.min.css"></link>
+    <title>Parking History Page</title>
+        <script>
+//            function doSomething(data){
+//                if(data.status === 'begin'){
+//                   // alert("begin");
+//                }
+//            }
+        </script>
+    </h:head>
+    <h:body>
+
+        <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        
+        <a class="navbar-brand" href="Admin_Dashboard.xhtml">
+          <strong>Car Parking System</strong>
+        </a>
+      </div>
+      <div id="navbar" class="navbar-collapse collapse justify-content-end">
+          
+          <ul class="navbar-nav ml-auto">
+              <li class="nav-item">
+                  <a class="nav-link navbar-brand btn text-center" href="Admin_Dashboard.xhtml">Back</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link navbar-brand btn text-center" href="Login.xhtml">Logout</a>
+              </li>
+          </ul>
+                   
+          
+      </div><!--/.navbar-collapse -->
+    </div>
+  </nav>
+
+<section class="secHist overflow-hidden">
+        
+    
+    
+    <div class="littleDash">
+         <h:form>
+    <div>
+        <label class="formlabel" for="searchkey">Search  </label>
+        <h:inputText value="#{cum.searchkey}">
+            <f:ajax  listener="#{cum.search()}" event="keyup" render="hist"/>
+    </h:inputText>
+    </div>
+    <center>
+    <div class="littleDash">
+<!--        <h:inputHidden value="#{cum.listHist()}"/>-->
+        <p:dataTable id="hist" value="#{cum.alloperations}" var="hist" rows="8" paginator="true" style="height: 370px"
+                         resizableColumns="true" 
+                         paginatorTemplate="{CurrentPageReport}  {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink}">
+                <center>
+                    <h:outputLabel value=" PARKING HISTORY"/>
+                </center>
+                <p:column style="width: 25%">
+                    <f:facet name="header">ACTION NAME</f:facet>
+                    <h:outputText value="#{hist.action.act_name}"/>
+                </p:column>
+                <p:column style="width: 20%">
+                    <f:facet name="header">Involved Car</f:facet>
+                    <h:outputText value="#{hist.car}"/>
+                </p:column>
+                <p:column style="width: 25%">
+                    <f:facet name="header">Owner's Name</f:facet>
+                    <h:outputText value="#{hist.car.owner_Name}"/>
+                </p:column>
+                <p:column style="width: 28%">
+                    <f:facet name="header">Date And Time</f:facet>
+                    <f:facet name="footer">Total Amount</f:facet>
+                    <h:outputText value="#{hist.dateTime}"/>
+                </p:column> 
+                <p:column style="width: 12%">
+                    <f:facet name="header">Amount</f:facet>
+                    <f:facet name="footer"><p:outputLabel value="#{cum.totalamount}"/>  </f:facet>
+                    <h:outputText value="#{hist.amount}"/>
+                </p:column>                
+            </p:dataTable>
+        
+        <h:commandLink id="pdf" class="pdf" >
+        <p:graphicImage url="http://localhost:8080/Parkingi/faces/images/pdf2.png" width="70"/>
+        <p:dataExporter id="dataExporter" type="pdf" target="hist" fileName="History"/>
+     </h:commandLink>
+    </div>
+        </center>
+</h:form>
+        
+    </div>
+    
+  </section>
+    <nav class="navbar navbar-inverse navbar-fixed-bottom" role="navigation">
+    <div class="container">
+        <div>
+            <p class="display-2">&copy; CarPark 2022</p>
+        </div>
+    </div>
+  </nav>
+      <script src="/js/bootstrap.min.js"></script> 
+        
+    </h:body>
+</html>
+

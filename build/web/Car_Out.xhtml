@@ -1,0 +1,154 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+         <meta charset="UTF-8"></meta>
+            <meta http-equiv="X-UA-Compatible" content="IE=edge"></meta>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"></meta>
+        <link type="text/css" href="style.css" rel="stylesheet"/>
+    
+    <link rel="stylesheet" href="css/bootstrap.min.css"></link>
+    <link rel="stylesheet" href="css/bootstrap-theme.min.css"></link>
+    <title>Car OUT</title>
+    </h:head>
+    <h:body>
+
+<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        
+        <a class="navbar-brand" href="Admin_Dashboard.xhtml">
+          <strong>Car Parking System</strong>
+        </a>
+      </div>
+      <div id="navbar" class="navbar-collapse collapse">
+          
+        <div class="navbar-link">
+            <a class="navbar-brand btn text-center" href="Admin_Dashboard.xhtml">Back</a>
+        </div>
+          <div class="navbar-link">
+            <a class="navbar-brand btn text-center" href="Login.xhtml">Logout</a>
+          </div>
+          
+          
+      </div><!--/.navbar-collapse -->
+    </div>
+  </nav>
+  
+<section class="sec overflow-hidden">
+        
+    <div class="carIn">
+        <div class="carIn2">
+            
+                <div class="card-body px-4 py-5 px-md-5">
+                    <h:form>
+                        
+                    
+                    <!-- 2 column grid layout with text inputs for the first and last names -->
+                    
+                     
+                    <!-- Email input -->
+                    <div class="usr mb-4">
+                      <label class="formlabel" for="plateno">Plate NO:  </label>
+                      
+                      <h:inputText id="pno" value="#{cum.carid}" required="true">
+                      <f:validateLength minimum="7" maximum="7"/>
+                      <f:validateRegex pattern="[A-Z][A-Z][A-Z][0-9][0-9][0-9][A-Z]"/>
+                      </h:inputText>
+                      <h:message for="pno"/>
+                      
+                    </div>
+    
+                    <!-- Submit button -->
+                    <h:commandButton class="btn btn-primary" value="Car_out" action="#{cum.carOut()}"/>
+                    
+                    <a class="btn btn-success" href="Car_Bill.xhtml">Print_Bill</a>
+                   <h:messages/>
+                    
+                  </h:form>
+                </div>
+              </div>
+        
+    </div>  
+    <br/>
+    <div class="littleDash">
+        <div class="row gx-lg-5 d-flex align-items-center text-center mb-5">
+       <div class="col-lg-12 ">
+              <a class=" btn btn-info text-center" href="history.xhtml">View parking history</a>
+          </div>
+          <div class="cont container px-4 py-5 px-md-5 text-center text-lg-start my-5">
+      <div class="row mb-3">
+        <div class="col-xsm-12 col-md-6 col-lg-4 mb-sm-3 d-flex justify-content-center">
+          <div class=" bg-glass card shadow" >
+            <div class="card-header bg-transparent ">
+                <img src="http://localhost:8080/Parkingi/faces/resources/home.png"  class="card-img-top"  alt="Car IN"></img>
+            </div>
+            <div class="card-body">
+                <p class="card-text fw-light">Go Back to homepage</p>
+              <h5 class="card-title">
+                  <a href="Admin_Dashboard.xhtml" class="text-muted stretched-link">Homepage</a>
+              </h5>
+            </div>
+          </div>
+        </div>
+        <div class="col-xsm-12 col-md-6 col-lg-4 mb-sm-3 d-flex justify-content-center">
+          <div class="bg-glass card shadow">
+            <div class="card-header bg-transparent ">
+                <img src="http://localhost:8080/Parkingi/faces/resources/logo1.png" class="card-img-top" alt="Car OUT"></img>
+            </div>
+           
+            <div class="card-body">
+                <p class="card-text fw-light">Record car entering in the parking</p>
+              <h5 class="card-title">
+                  <a href="Car_In.xhtml" class="text-muted stretched-link">Car IN</a>
+              </h5>
+                             
+            </div>
+          </div>
+        </div>
+        <div class="col-xsm-12 col-md-6 col-lg-4 mb-sm-3 d-flex justify-content-center">
+          <div class="bg-glass card shadow">
+            <div class="card-header bg-transparent ">
+                <img src="http://localhost:8080/Parkingi/faces/resources/register.jpg" class="card-img-top" alt="Register"></img>
+            </div>
+            <div class="card-body">
+              
+              <p class="card-text fw-light">Register a new car in the system</p>
+              <h5 class="card-title">
+                  <a href="registration_page_1.xhtml" class="text-muted stretched-link">Register Car</a>
+              </h5>
+            </div>
+          </div>
+        </div>
+        
+      </div>
+      
+    </div>
+          
+    </div>
+        
+    </div>
+    
+  </section>
+<nav class="navbar navbar-inverse navbar-fixed-bottom" role="navigation">
+    <div class="container">
+        <div>
+            <p class="display-2">&copy; CarPark 2022</p>
+        </div>
+    </div>
+  </nav>
+      <script src="/js/bootstrap.min.js"></script> 
+
+    </h:body>
+</html>
+

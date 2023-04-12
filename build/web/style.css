@@ -1,0 +1,136 @@
+
+
+   
+
+    .bg-glass {
+    background-color: hsla(0, 0%, 100%, 0.616) !important;
+    backdrop-filter: saturate(10%) blur(20px);
+    border-radius: 2%;
+    height: 340px;
+    width: 450px;
+    }
+
+    .bod{
+        padding-top: 135px;
+        background-image: url(http://localhost:8080/Parkingi/faces/resources/bg_image.jpg);
+    }
+
+    image{
+        margin-right:700px ;
+    }
+   
+    .cards{
+        
+        padding: 70px;
+    }
+
+    .usr{
+        padding-bottom: 20px;
+    }
+    .psw{
+        padding-bottom: 20px;
+    }
+    
+    .background-radial-gradient {
+   
+        background-image: url(http://localhost:8080/Parkingi/faces/resources/bg_image.jpg);
+    padding-bottom: 140px;
+    padding-top: 180px;
+    
+    }
+
+    .card{
+        
+       margin: 30px;
+       width: 300px;
+       height: 300px;
+       transition: transform 500ms ease;
+    }
+    .card:hover{
+        border-color: rgb(100, 136, 102);
+        transform: scale(1.08);
+    }   
+    
+    .card-img-top{
+        width: 220px;
+       height: 240px;
+        padding-top: 10px;
+        padding-bottom: 20px;
+    }
+    
+    .carIn{
+        padding-left: 40%;
+    }
+    
+    .carIn2{
+        background-color: hsla(0, 0%, 100%, 0.616) !important;
+        backdrop-filter: saturate(10%) blur(20px);
+        border-radius: 2%;
+        height: 140px;
+        width: 300px;
+        padding-top: 30px;
+        padding-left: 30px;
+        margin-bottom: 10px;
+    }
+    .carIn3{
+        background-color: hsla(0, 0%, 100%, 0.616) !important;
+        backdrop-filter: saturate(10%) blur(20px);
+        border-radius: 2%;
+        height: 220px;
+        width: 400px;
+        padding-top: 20px;
+        padding-left: 30px;
+        margin-bottom: 10px;
+    }
+    
+    .cardie{
+        margin: 15px;
+       width: 150px;
+       height: 150px;
+       transition: transform 500ms ease;
+    }
+    
+    .cardie:hover{
+        border-color: rgb(100, 136, 102);
+        transform: scale(1.08);
+    } 
+    
+    .sec{
+        position: static;
+        background-image: url(http://localhost:8080/Parkingi/faces/resources/bg_image.jpg);
+    padding-bottom: 140px;
+    padding-top: 80px;
+    }
+    .secHist{
+        position: static;
+        background-image: url(http://localhost:8080/Parkingi/faces/resources/bg_image.jpg);
+    padding-bottom: 230px;
+    padding-top: 80px;
+    }
+    
+     .littleDash{
+    background-color: hsla(0, 0%, 44%, 0.527) !important;
+    backdrop-filter: saturate(10%) blur(20px);
+    border-radius: 10px;
+    
+    padding: 10px;
+    margin: 20px;
+    margin-left: 120px;
+    margin-right: 120px;
+}
+    .bill{
+        margin-left: 120px;
+    margin-right: 120px;
+    padding-left: 300px;
+}
+.pdf{
+    margin: 20px;
+    transition: transform 500ms ease;
+}
+.pdf:hover{
+    transform: scale(1.08);
+}
+
+.msg{
+    
+}

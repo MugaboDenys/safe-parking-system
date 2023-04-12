@@ -1,0 +1,96 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <meta charset="UTF-8"></meta>
+            <meta http-equiv="X-UA-Compatible" content="IE=edge"></meta>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"></meta>
+        <link type="text/css" href="style.css" rel="stylesheet"/>
+    
+    <link rel="stylesheet" href="css/bootstrap.min.css"></link>
+    <link rel="stylesheet" href="css/bootstrap-theme.min.css"></link>
+    <title>Login Page</title>
+    </h:head>
+    <h:body id="bod">
+      
+
+          
+  <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        
+        <a class="navbar-brand" href="#">
+          <strong>Car Parking System</strong>
+        </a>
+      </div>
+      <div id="navbar" class="navbar-collapse collapse">
+        
+      </div><!--/.navbar-collapse -->
+    </div>
+  </nav>
+  
+<section class="background-radial-gradient overflow-hidden">
+    <div class="msg">
+        <h3>
+            <p:messages id="ErrorMessage" style="color: red"/>
+        </h3>
+    </div>
+      
+        <div class="container px-4 py-5 px-md-5 text-start text-lg-start my-5">
+          <div class="row gx-lg-5 align-items-center mb-5">
+            <div class="col-lg-6 mb-5 mb-lg-0" style="z-index: 10">
+                <img class="image" src="http://localhost:8080/Parkingi/faces/resources/logo.png" alt=""></img>
+            </div>
+      
+            <div class="col-lg-6 mb-5 mb-lg-0">
+              
+              <div class="cards bg-glass">
+                <div class="card-body px-4 py-5 px-md-5">
+                    <h:form>
+                        
+                    
+                    <!-- 2 column grid layout with text inputs for the first and last names -->
+                    
+      
+                    <!-- Email input -->
+                    <div class="usr mb-4">
+                      <label class="formlabel" for="form3Example3">UserName</label>
+                      <br/>
+                      <h:inputText value="#{cum.un}" id="name"/>
+                      <h:message for="name"/>
+                    </div>
+      
+                    <!-- Password input -->
+                    <div class="psw mb-4">
+                      <label class="formlabel" for="form3Example4">Password</label>
+                      <br/>
+                      <h:inputSecret value="#{cum.pas}" id="psw" />
+                      <h:message for="psw"/>
+                    </div>
+      
+                    
+      
+                    <!-- Submit button -->
+                    <h:commandButton class="btn btn-primary" action="#{cum.login()}" value="Login"/>
+                    <h:messages/>
+                   
+                    
+                  </h:form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <script src="/js/bootstrap.min.js"></script>            
+    </h:body>
+</html>
+
